@@ -17,7 +17,11 @@ namespace FinanceTracker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if(Properties.Settings.Default.UserName != string.Empty)
+            {
+                txtUsername.Text = Properties.Settings.Default.UserName;
+                txtPassword.Text = Properties.Settings.Default.Password;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -39,9 +43,27 @@ namespace FinanceTracker
                 txtPassword.Clear();
                 txtUsername.Focus();
             }
+
+            if (checkBox1.Checked == true)
+            {
+                Properties.Settings.Default.UserName = txtUsername.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
+                Properties.Settings.Default.Save();
+            } 
+            else if (checkBox1.Checked == false)
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
