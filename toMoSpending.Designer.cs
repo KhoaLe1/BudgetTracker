@@ -33,6 +33,20 @@ namespace FinanceTracker
             this.lv_spendings = new System.Windows.Forms.ListView();
             this.ch_description = new System.Windows.Forms.ColumnHeader();
             this.ch_cost = new System.Windows.Forms.ColumnHeader();
+            this.ch_budget = new System.Windows.Forms.ColumnHeader();
+            this.exIncome = new System.Windows.Forms.Label();
+            this.txtIn = new System.Windows.Forms.TextBox();
+            this.eDescrib = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.ePrice = new System.Windows.Forms.Label();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.eDnP = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
+            this.vBar1 = new FinanceTracker.vBar();
+            this.aFunds = new System.Windows.Forms.Label();
+            this.expectF = new System.Windows.Forms.Label();
+            this.pcent = new System.Windows.Forms.Label();
+            this.eIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,11 +66,12 @@ namespace FinanceTracker
             // 
             this.lv_spendings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_description,
-            this.ch_cost});
+            this.ch_cost,
+            this.ch_budget});
             this.lv_spendings.HideSelection = false;
-            this.lv_spendings.Location = new System.Drawing.Point(12, 26);
+            this.lv_spendings.Location = new System.Drawing.Point(249, 194);
             this.lv_spendings.Name = "lv_spendings";
-            this.lv_spendings.Size = new System.Drawing.Size(161, 400);
+            this.lv_spendings.Size = new System.Drawing.Size(443, 214);
             this.lv_spendings.TabIndex = 1;
             this.lv_spendings.UseCompatibleStateImageBehavior = false;
             this.lv_spendings.View = System.Windows.Forms.View.Details;
@@ -65,12 +80,139 @@ namespace FinanceTracker
             // ch_description
             // 
             this.ch_description.Text = "Description";
-            this.ch_description.Width = 100;
+            this.ch_description.Width = 250;
             // 
             // ch_cost
             // 
             this.ch_cost.Text = "Cost";
             this.ch_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ch_cost.Width = 100;
+            // 
+            // ch_budget
+            // 
+            this.ch_budget.Text = "Budget";
+            this.ch_budget.Width = 100;
+            // 
+            // exIncome
+            // 
+            this.exIncome.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exIncome.Location = new System.Drawing.Point(249, 47);
+            this.exIncome.Name = "exIncome";
+            this.exIncome.Size = new System.Drawing.Size(119, 23);
+            this.exIncome.TabIndex = 2;
+            this.exIncome.Text = "Expected Income";
+            this.exIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtIn
+            // 
+            this.txtIn.Location = new System.Drawing.Point(249, 75);
+            this.txtIn.Name = "txtIn";
+            this.txtIn.Size = new System.Drawing.Size(119, 23);
+            this.txtIn.TabIndex = 3;
+            this.txtIn.TextChanged += new System.EventHandler(this.txtIn_TextChanged);
+            // 
+            // eDescrib
+            // 
+            this.eDescrib.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.eDescrib.Location = new System.Drawing.Point(430, 47);
+            this.eDescrib.Name = "eDescrib";
+            this.eDescrib.Size = new System.Drawing.Size(119, 23);
+            this.eDescrib.TabIndex = 4;
+            this.eDescrib.Text = "Description";
+            this.eDescrib.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(555, 47);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(119, 23);
+            this.txtName.TabIndex = 5;
+            this.txtName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // ePrice
+            // 
+            this.ePrice.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ePrice.Location = new System.Drawing.Point(430, 101);
+            this.ePrice.Name = "ePrice";
+            this.ePrice.Size = new System.Drawing.Size(119, 23);
+            this.ePrice.TabIndex = 6;
+            this.ePrice.Text = "Price";
+            this.ePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtCost
+            // 
+            this.txtCost.Location = new System.Drawing.Point(555, 101);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(119, 23);
+            this.txtCost.TabIndex = 8;
+            this.txtCost.TextChanged += new System.EventHandler(this.txtCost_TextChanged);
+            // 
+            // eDnP
+            // 
+            this.eDnP.Location = new System.Drawing.Point(599, 154);
+            this.eDnP.Name = "eDnP";
+            this.eDnP.Size = new System.Drawing.Size(75, 23);
+            this.eDnP.TabIndex = 10;
+            this.eDnP.Text = "Add";
+            this.eDnP.UseVisualStyleBackColor = true;
+            this.eDnP.Click += new System.EventHandler(this.eDnP_Click);
+            // 
+            // clear
+            // 
+            this.clear.Location = new System.Drawing.Point(474, 154);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 11;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // vBar1
+            // 
+            this.vBar1.Location = new System.Drawing.Point(78, 119);
+            this.vBar1.Name = "vBar1";
+            this.vBar1.Size = new System.Drawing.Size(50, 289);
+            this.vBar1.TabIndex = 12;
+            this.vBar1.Click += new System.EventHandler(this.vBar1_Click);
+            // 
+            // aFunds
+            // 
+            this.aFunds.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.aFunds.Location = new System.Drawing.Point(35, 43);
+            this.aFunds.Name = "aFunds";
+            this.aFunds.Size = new System.Drawing.Size(137, 31);
+            this.aFunds.TabIndex = 13;
+            this.aFunds.Text = "Remaining Budget";
+            this.aFunds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // expectF
+            // 
+            this.expectF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.expectF.Location = new System.Drawing.Point(35, 74);
+            this.expectF.Name = "expectF";
+            this.expectF.Size = new System.Drawing.Size(137, 23);
+            this.expectF.TabIndex = 14;
+            this.expectF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.expectF.Click += new System.EventHandler(this.txtIn_TextChanged);
+            // 
+            // pcent
+            // 
+            this.pcent.Location = new System.Drawing.Point(78, 414);
+            this.pcent.Name = "pcent";
+            this.pcent.Size = new System.Drawing.Size(50, 23);
+            this.pcent.TabIndex = 15;
+            this.pcent.Text = "0";
+            this.pcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // eIn
+            // 
+            this.eIn.Location = new System.Drawing.Point(274, 119);
+            this.eIn.Name = "eIn";
+            this.eIn.Size = new System.Drawing.Size(65, 23);
+            this.eIn.TabIndex = 16;
+            this.eIn.Text = "Enter";
+            this.eIn.UseVisualStyleBackColor = true;
+            this.eIn.Click += new System.EventHandler(this.eIn_Click);
             // 
             // toMoSpending
             // 
@@ -78,12 +220,26 @@ namespace FinanceTracker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(717, 438);
+            this.Controls.Add(this.eIn);
+            this.Controls.Add(this.pcent);
+            this.Controls.Add(this.expectF);
+            this.Controls.Add(this.aFunds);
+            this.Controls.Add(this.vBar1);
+            this.Controls.Add(this.clear);
+            this.Controls.Add(this.eDnP);
+            this.Controls.Add(this.txtCost);
+            this.Controls.Add(this.ePrice);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.eDescrib);
+            this.Controls.Add(this.txtIn);
+            this.Controls.Add(this.exIncome);
             this.Controls.Add(this.lv_spendings);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "toMoSpending";
             this.Text = "toMoSpending";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,5 +249,19 @@ namespace FinanceTracker
         private System.Windows.Forms.ListView lv_spendings;
         private System.Windows.Forms.ColumnHeader ch_description;
         private System.Windows.Forms.ColumnHeader ch_cost;
+        private System.Windows.Forms.ColumnHeader ch_budget;
+        private System.Windows.Forms.Label exIncome;
+        private System.Windows.Forms.TextBox txtIn;
+        private System.Windows.Forms.Label eDescrib;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label ePrice;
+        private System.Windows.Forms.TextBox txtCost;
+        private System.Windows.Forms.Button eDnP;
+        private System.Windows.Forms.Button clear;
+        private vBar vBar1;
+        private System.Windows.Forms.Label aFunds;
+        private System.Windows.Forms.Label expectF;
+        private System.Windows.Forms.Label pcent;
+        private System.Windows.Forms.Button eIn;
     }
 }
