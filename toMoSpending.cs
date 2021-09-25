@@ -19,5 +19,10 @@ namespace FinanceTracker
         {
 
         }
+
+        private void lv_spendings_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
