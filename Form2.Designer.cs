@@ -38,7 +38,7 @@ namespace FinanceTracker
             this.BtnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sad = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.usrname = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
@@ -90,7 +90,7 @@ namespace FinanceTracker
             this.BtnBreakdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnBreakdown.Image = global::FinanceTracker.Properties.Resources.icons8_pie_chart_30;
             this.BtnBreakdown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBreakdown.Location = new System.Drawing.Point(0, 309);
+            this.BtnBreakdown.Location = new System.Drawing.Point(0, 307);
             this.BtnBreakdown.Name = "BtnBreakdown";
             this.BtnBreakdown.Size = new System.Drawing.Size(167, 68);
             this.BtnBreakdown.TabIndex = 1;
@@ -109,7 +109,7 @@ namespace FinanceTracker
             this.BtnSavings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnSavings.Image = global::FinanceTracker.Properties.Resources.icons8_bank_safe_24;
             this.BtnSavings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSavings.Location = new System.Drawing.Point(0, 241);
+            this.BtnSavings.Location = new System.Drawing.Point(0, 239);
             this.BtnSavings.Name = "BtnSavings";
             this.BtnSavings.Size = new System.Drawing.Size(167, 68);
             this.BtnSavings.TabIndex = 1;
@@ -128,7 +128,7 @@ namespace FinanceTracker
             this.BtnMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnMonth.Image = global::FinanceTracker.Properties.Resources.icons8_calendar_24;
             this.BtnMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnMonth.Location = new System.Drawing.Point(0, 173);
+            this.BtnMonth.Location = new System.Drawing.Point(0, 171);
             this.BtnMonth.Name = "BtnMonth";
             this.BtnMonth.Size = new System.Drawing.Size(167, 68);
             this.BtnMonth.TabIndex = 1;
@@ -147,7 +147,7 @@ namespace FinanceTracker
             this.BtnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.BtnDashboard.Image = global::FinanceTracker.Properties.Resources.icons8_home_24;
             this.BtnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnDashboard.Location = new System.Drawing.Point(0, 105);
+            this.BtnDashboard.Location = new System.Drawing.Point(0, 103);
             this.BtnDashboard.Name = "BtnDashboard";
             this.BtnDashboard.Size = new System.Drawing.Size(167, 68);
             this.BtnDashboard.TabIndex = 1;
@@ -160,14 +160,13 @@ namespace FinanceTracker
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.sad);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.usrname);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(167, 105);
+            this.panel2.Size = new System.Drawing.Size(167, 103);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -182,18 +181,18 @@ namespace FinanceTracker
             this.sad.Text = "Last Signed In:";
             this.sad.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // usrname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(39, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.usrname.AutoSize = true;
+            this.usrname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.usrname.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.usrname.Location = new System.Drawing.Point(39, 66);
+            this.usrname.Name = "usrname";
+            this.usrname.Size = new System.Drawing.Size(94, 21);
+            this.usrname.TabIndex = 1;
+            this.usrname.Text = "User Name";
+            this.usrname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.usrname.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -209,11 +208,11 @@ namespace FinanceTracker
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbTitle.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lbTitle.Location = new System.Drawing.Point(457, 9);
+            this.lbTitle.Font = new System.Drawing.Font("Showcard Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbTitle.Location = new System.Drawing.Point(173, 2);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(162, 32);
+            this.lbTitle.Size = new System.Drawing.Size(185, 35);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Dashboard";
             // 
@@ -239,7 +238,7 @@ namespace FinanceTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PnlFormLoader);
@@ -250,6 +249,9 @@ namespace FinanceTracker
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_event);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_even);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -265,7 +267,7 @@ namespace FinanceTracker
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label usrname;
         private System.Windows.Forms.Label sad;
         private System.Windows.Forms.Button BtnDashboard;
         private System.Windows.Forms.Button BtnMonth;

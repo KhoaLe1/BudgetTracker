@@ -29,7 +29,6 @@ namespace FinanceTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.lv_spendings = new System.Windows.Forms.ListView();
             this.ch_description = new System.Windows.Forms.ColumnHeader();
             this.ch_cost = new System.Windows.Forms.ColumnHeader();
@@ -49,19 +48,6 @@ namespace FinanceTracker
             this.eIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(717, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Monthly Spendings";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // lv_spendings
             // 
             this.lv_spendings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -69,9 +55,9 @@ namespace FinanceTracker
             this.ch_cost,
             this.ch_budget});
             this.lv_spendings.HideSelection = false;
-            this.lv_spendings.Location = new System.Drawing.Point(249, 194);
+            this.lv_spendings.Location = new System.Drawing.Point(231, 188);
             this.lv_spendings.Name = "lv_spendings";
-            this.lv_spendings.Size = new System.Drawing.Size(443, 214);
+            this.lv_spendings.Size = new System.Drawing.Size(443, 220);
             this.lv_spendings.TabIndex = 1;
             this.lv_spendings.UseCompatibleStateImageBehavior = false;
             this.lv_spendings.View = System.Windows.Forms.View.Details;
@@ -96,16 +82,16 @@ namespace FinanceTracker
             // exIncome
             // 
             this.exIncome.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exIncome.Location = new System.Drawing.Point(249, 47);
+            this.exIncome.Location = new System.Drawing.Point(240, 13);
             this.exIncome.Name = "exIncome";
-            this.exIncome.Size = new System.Drawing.Size(119, 23);
+            this.exIncome.Size = new System.Drawing.Size(139, 23);
             this.exIncome.TabIndex = 2;
-            this.exIncome.Text = "Expected Income";
+            this.exIncome.Text = "Expected Budget";
             this.exIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtIn
             // 
-            this.txtIn.Location = new System.Drawing.Point(249, 75);
+            this.txtIn.Location = new System.Drawing.Point(249, 49);
             this.txtIn.Name = "txtIn";
             this.txtIn.Size = new System.Drawing.Size(119, 23);
             this.txtIn.TabIndex = 3;
@@ -114,7 +100,7 @@ namespace FinanceTracker
             // eDescrib
             // 
             this.eDescrib.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.eDescrib.Location = new System.Drawing.Point(430, 47);
+            this.eDescrib.Location = new System.Drawing.Point(430, 13);
             this.eDescrib.Name = "eDescrib";
             this.eDescrib.Size = new System.Drawing.Size(119, 23);
             this.eDescrib.TabIndex = 4;
@@ -123,7 +109,7 @@ namespace FinanceTracker
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(555, 47);
+            this.txtName.Location = new System.Drawing.Point(555, 15);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(119, 23);
             this.txtName.TabIndex = 5;
@@ -132,16 +118,16 @@ namespace FinanceTracker
             // ePrice
             // 
             this.ePrice.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ePrice.Location = new System.Drawing.Point(430, 101);
+            this.ePrice.Location = new System.Drawing.Point(430, 47);
             this.ePrice.Name = "ePrice";
             this.ePrice.Size = new System.Drawing.Size(119, 23);
             this.ePrice.TabIndex = 6;
-            this.ePrice.Text = "Price";
+            this.ePrice.Text = "Cost";
             this.ePrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCost
             // 
-            this.txtCost.Location = new System.Drawing.Point(555, 101);
+            this.txtCost.Location = new System.Drawing.Point(555, 47);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(119, 23);
             this.txtCost.TabIndex = 8;
@@ -149,7 +135,7 @@ namespace FinanceTracker
             // 
             // eDnP
             // 
-            this.eDnP.Location = new System.Drawing.Point(599, 154);
+            this.eDnP.Location = new System.Drawing.Point(599, 90);
             this.eDnP.Name = "eDnP";
             this.eDnP.Size = new System.Drawing.Size(75, 23);
             this.eDnP.TabIndex = 10;
@@ -159,7 +145,7 @@ namespace FinanceTracker
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(474, 154);
+            this.clear.Location = new System.Drawing.Point(474, 90);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(75, 23);
             this.clear.TabIndex = 11;
@@ -169,7 +155,7 @@ namespace FinanceTracker
             // 
             // vBar1
             // 
-            this.vBar1.Location = new System.Drawing.Point(78, 119);
+            this.vBar1.Location = new System.Drawing.Point(69, 90);
             this.vBar1.Name = "vBar1";
             this.vBar1.Size = new System.Drawing.Size(50, 289);
             this.vBar1.TabIndex = 12;
@@ -178,7 +164,7 @@ namespace FinanceTracker
             // aFunds
             // 
             this.aFunds.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.aFunds.Location = new System.Drawing.Point(35, 43);
+            this.aFunds.Location = new System.Drawing.Point(35, 9);
             this.aFunds.Name = "aFunds";
             this.aFunds.Size = new System.Drawing.Size(137, 31);
             this.aFunds.TabIndex = 13;
@@ -188,7 +174,7 @@ namespace FinanceTracker
             // expectF
             // 
             this.expectF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.expectF.Location = new System.Drawing.Point(35, 74);
+            this.expectF.Location = new System.Drawing.Point(35, 40);
             this.expectF.Name = "expectF";
             this.expectF.Size = new System.Drawing.Size(137, 23);
             this.expectF.TabIndex = 14;
@@ -197,16 +183,15 @@ namespace FinanceTracker
             // 
             // pcent
             // 
-            this.pcent.Location = new System.Drawing.Point(78, 414);
+            this.pcent.Location = new System.Drawing.Point(69, 385);
             this.pcent.Name = "pcent";
             this.pcent.Size = new System.Drawing.Size(50, 23);
             this.pcent.TabIndex = 15;
-            this.pcent.Text = "0";
             this.pcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // eIn
             // 
-            this.eIn.Location = new System.Drawing.Point(274, 119);
+            this.eIn.Location = new System.Drawing.Point(276, 90);
             this.eIn.Name = "eIn";
             this.eIn.Size = new System.Drawing.Size(65, 23);
             this.eIn.TabIndex = 16;
@@ -234,7 +219,6 @@ namespace FinanceTracker
             this.Controls.Add(this.txtIn);
             this.Controls.Add(this.exIncome);
             this.Controls.Add(this.lv_spendings);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "toMoSpending";
             this.Text = "toMoSpending";
@@ -244,8 +228,6 @@ namespace FinanceTracker
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lv_spendings;
         private System.Windows.Forms.ColumnHeader ch_description;
         private System.Windows.Forms.ColumnHeader ch_cost;

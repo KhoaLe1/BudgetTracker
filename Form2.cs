@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace FinanceTracker
 {
     public partial class Form2 : Form
     {
-        
+        bool mouseDown;
+        private Point offset;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -35,6 +38,8 @@ namespace FinanceTracker
             panel2.Top = BtnDashboard.Top;
             panel2.Left = BtnDashboard.Left;
             BtnDashboard.BackColor = Color.FromArgb(128, 255, 255);
+
+            usrname.Text = Properties.Settings.Default.UserName;
 
             lbTitle.Text = "DashBoard";
             this.PnlFormLoader.Controls.Clear();
@@ -193,6 +198,28 @@ namespace FinanceTracker
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true; 
+        }
+
+        private void mouseMove_event(object sender, MouseEventArgs e)
+        {
+            if(mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+
+            }
+        }
+
+        private void mouseUp_even(object sender, MouseEventArgs e)
+        {
+            mouseDown = false; 
         }
     }
 }

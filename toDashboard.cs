@@ -44,7 +44,9 @@ namespace FinanceTracker
             label2.Text = Bank;
             MoneyGoal.Text = MGoal;
 
-            vBar1.Update();
+            int percentage = Convert.ToInt32((NetWorth / Goal) * 100);
+            vBar1.Value = percentage;
+            pcent.Text = percentage.ToString();
         }
 
 
@@ -94,16 +96,20 @@ namespace FinanceTracker
 
         private void vBar1_Click(object sender, EventArgs e)
         {
-            double Balance = double.Parse(textBox2.Text);
-            double Income = double.Parse(textBox3.Text);
-            double NetWorth = Balance + Income;
-            double Goal = double.Parse(textBox4.Text);
-            int percentage = Convert.ToInt32( (NetWorth / Goal) * 100);
-            vBar1.Value = percentage;
-            pcent.Text = percentage.ToString();
+          
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MoneyGoal_Click(object sender, EventArgs e)
         {
 
         }
