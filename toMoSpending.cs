@@ -14,6 +14,7 @@ namespace FinanceTracker
         double dbudget = 0;
         double budNum = 0;
         double percentage = 0;
+        double spent = 0;
         int iPercent = 0;
         public toMoSpending()
         {
@@ -65,14 +66,15 @@ namespace FinanceTracker
 
         private void eDnP_Click(object sender, EventArgs e)
         {
-            double spent = double.Parse(txtCost.Text);
+            spent = double.Parse(txtCost.Text);
             dbudget = dbudget - spent;
 
             Budget = dbudget.ToString();
 
             ListViewItem Item = new ListViewItem(txtName.Text);
-            Item.SubItems.Add("- $" + txtCost.Text);
-            Item.SubItems.Add("$" + Budget);
+    
+            Item.SubItems.Add(txtCost.Text);
+            Item.SubItems.Add(Budget);
             lv_spendings.Items.Add(Item);
 
             //budNum = double.Parse(Budget);
@@ -93,6 +95,41 @@ namespace FinanceTracker
         private void txtIn_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text != "")
+            {
+                lv_spendings.SelectedItems[0].SubItems[0].Text = txtName.Text;
+            }
+
+            if (txtCost.Text != "")
+            {
+                spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                dbudget = dbudget + spent;
+                // add back previous value
+                lv_spendings.SelectedItems[0].SubItems[1].Text = txtCost.Text;
+
+                spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                dbudget = dbudget - spent;
+                //subtract updated value
+
+                Budget = dbudget.ToString();
+
+                lv_spendings.SelectedItems[0].SubItems[2].Text = Budget;
+
+                btnEnter.PerformClick();
+
+            }
+            
+
+        }
+
+        private void lv_spendings_MouseClick(object sender, MouseEventArgs e)
+        { 
+            txtName.Text = lv_spendings.SelectedItems[0].SubItems[0].Text;
+            txtCost.Text = lv_spendings.SelectedItems[0].SubItems[1].Text;
         }
     }
 }

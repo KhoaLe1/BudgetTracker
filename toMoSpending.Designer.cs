@@ -45,23 +45,27 @@ namespace FinanceTracker
             this.aFunds = new System.Windows.Forms.Label();
             this.expectF = new System.Windows.Forms.Label();
             this.pcent = new System.Windows.Forms.Label();
-            this.eIn = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lv_spendings
             // 
+            this.lv_spendings.BackColor = System.Drawing.Color.White;
             this.lv_spendings.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_description,
             this.ch_cost,
             this.ch_budget});
             this.lv_spendings.HideSelection = false;
-            this.lv_spendings.Location = new System.Drawing.Point(231, 188);
+            this.lv_spendings.Location = new System.Drawing.Point(240, 188);
             this.lv_spendings.Name = "lv_spendings";
             this.lv_spendings.Size = new System.Drawing.Size(443, 220);
             this.lv_spendings.TabIndex = 1;
             this.lv_spendings.UseCompatibleStateImageBehavior = false;
             this.lv_spendings.View = System.Windows.Forms.View.Details;
             this.lv_spendings.SelectedIndexChanged += new System.EventHandler(this.lv_spendings_SelectedIndexChanged);
+            this.lv_spendings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lv_spendings_MouseClick);
             // 
             // ch_description
             // 
@@ -189,15 +193,34 @@ namespace FinanceTracker
             this.pcent.TabIndex = 15;
             this.pcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // eIn
+            // btnEnter
             // 
-            this.eIn.Location = new System.Drawing.Point(276, 90);
-            this.eIn.Name = "eIn";
-            this.eIn.Size = new System.Drawing.Size(65, 23);
-            this.eIn.TabIndex = 16;
-            this.eIn.Text = "Enter";
-            this.eIn.UseVisualStyleBackColor = true;
-            this.eIn.Click += new System.EventHandler(this.eIn_Click);
+            this.btnEnter.Location = new System.Drawing.Point(276, 90);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(65, 23);
+            this.btnEnter.TabIndex = 16;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.eIn_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(599, 142);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(474, 142);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // toMoSpending
             // 
@@ -205,7 +228,9 @@ namespace FinanceTracker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(717, 438);
-            this.Controls.Add(this.eIn);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.pcent);
             this.Controls.Add(this.expectF);
             this.Controls.Add(this.aFunds);
@@ -244,6 +269,8 @@ namespace FinanceTracker
         private System.Windows.Forms.Label aFunds;
         private System.Windows.Forms.Label expectF;
         private System.Windows.Forms.Label pcent;
-        private System.Windows.Forms.Button eIn;
+        private System.Windows.Forms.Button btnEnter;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
