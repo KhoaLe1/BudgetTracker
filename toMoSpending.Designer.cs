@@ -113,6 +113,7 @@ namespace FinanceTracker
             // 
             // txtName
             // 
+            this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(555, 15);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(119, 23);
@@ -131,6 +132,7 @@ namespace FinanceTracker
             // 
             // txtCost
             // 
+            this.txtCost.Enabled = false;
             this.txtCost.Location = new System.Drawing.Point(555, 47);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(119, 23);

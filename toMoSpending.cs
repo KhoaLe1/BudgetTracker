@@ -10,13 +10,15 @@ namespace FinanceTracker
 {
     public partial class toMoSpending : Form
     {
-        string Budget = "", updated = "";
+        string Budget = "", updated = "", setBudget = "";
         double dbudget = 0;
         double budNum = 0;
         double percentage = 0;
         double spent = 0;
+        double addBack = 0;
+        double numOnly = 0;
         int iPercent = 0;
-        bool update = false;
+        bool update = false, isempty = false, isNum = true;
         public toMoSpending()
         {
             InitializeComponent();
@@ -47,13 +49,13 @@ namespace FinanceTracker
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
 
         private void txtCost_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void vBar1_Click(object sender, EventArgs e)
@@ -63,51 +65,68 @@ namespace FinanceTracker
 
         private void eIn_Click(object sender, EventArgs e)
         {
+            if(update == false) {
+                txtName.Enabled = true;
+                txtCost.Enabled = true;
+            }
+            
 
             if (txtIn.Text != "") { Budget = txtIn.Text; }
             txtIn.Text = "";
-            if(update == false) 
+          
+            if(update == false || isempty == true) 
             { 
                 dbudget = double.Parse(Budget); // text to double type
                 expectF.Text = "$" + Budget;
                 budNum = double.Parse(Budget);
-            } else if (update == true)
+            } 
+            else if ((update == true && txtIn.Text != "") && isempty == false)
             {
                 expectF.Text = "$" + updated;
             }
 
             percentage = Math.Truncate((dbudget / budNum) * 100);
+
             if (dbudget != 0) { iPercent = Convert.ToInt32(percentage); }
             else { iPercent = 0; }
+
             vBar1.Value = iPercent;
             pcent.Text = percentage.ToString() + "%";
         }
 
         private void eDnP_Click(object sender, EventArgs e)
         {
-            if (txtCost.Text == "") { txtCost.Text = "0"; } 
-            spent = double.Parse(txtCost.Text);
-            dbudget = dbudget - spent;
+            if (txtCost.Text == "") { txtCost.Text = "0"; }
+            isNum = double.TryParse(txtCost.Text, out double numOnly);
+            if(isNum == true) 
+            { 
+                spent = double.Parse(txtCost.Text);
+                dbudget = dbudget - spent;
 
-            Budget = dbudget.ToString();
+                setBudget = dbudget.ToString();
 
-            ListViewItem Item = new ListViewItem(txtName.Text);
+                ListViewItem Item = new ListViewItem(txtName.Text);
     
-            Item.SubItems.Add(txtCost.Text);
-            Item.SubItems.Add(Budget);
-            lv_spendings.Items.Add(Item);
+                Item.SubItems.Add(txtCost.Text);
+                Item.SubItems.Add(setBudget);
+                lv_spendings.Items.Add(Item);
 
-            txtName.Text = "";
-            txtCost.Text = "";
-            //budNum = double.Parse(Budget);
-            expectF.Text = "$" + dbudget;
+                txtName.Text = "";
+                txtCost.Text = "";
+                //budNum = double.Parse(Budget);
+                expectF.Text = "$" + dbudget;
 
-            percentage = Math.Truncate((dbudget / budNum) * 100);
-            iPercent = Convert.ToInt32(percentage);
-            vBar1.Value = iPercent;
-            pcent.Text = percentage.ToString() + "%";
+                percentage = Math.Truncate((dbudget / budNum) * 100);
+                iPercent = Convert.ToInt32(percentage);
+                vBar1.Value = iPercent;
+                pcent.Text = percentage.ToString() + "%";
 
-            vBar1.Update();
+                    //vBar1.Update();
+            }
+            else
+            {
+                MessageBox.Show("Only input numbers for Cost", "Numbers Only Please", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -151,16 +170,33 @@ namespace FinanceTracker
         {
             if (MessageBox.Show("Deleting selected item. Continue?", "DELETE", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
+              
+                addBack = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                dbudget += addBack;
+                updated = dbudget.ToString();
+
                 lv_spendings.Items.RemoveAt(lv_spendings.SelectedIndices[0]);
+                update = true;
+
+                //string ls = lv_spendings.Items.Count.ToString();
+                //MessageBox.Show(ls,"Size",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                if(lv_spendings.Items.Count == 0) { isempty = true; }
+
+                btnEnter.PerformClick();
+
                 txtName.Text = "";
                 txtCost.Text = "";
+                
             }
         }
 
         private void lv_spendings_MouseClick(object sender, MouseEventArgs e)
-        { 
-            txtName.Text = lv_spendings.SelectedItems[0].SubItems[0].Text;
-            txtCost.Text = lv_spendings.SelectedItems[0].SubItems[1].Text;
+        {
+            if (lv_spendings.SelectedItems.Count != 0)
+            {
+                txtName.Text = lv_spendings.SelectedItems[0].SubItems[0].Text;
+                txtCost.Text = lv_spendings.SelectedItems[0].SubItems[1].Text;
+            }
         }
-    }
+    }                          
 }
