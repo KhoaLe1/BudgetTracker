@@ -12,6 +12,8 @@ using System.Runtime.InteropServices;
 
 namespace FinanceTracker
 {
+    
+
     public partial class Form2 : Form
     {
         bool mouseDown;
@@ -29,6 +31,7 @@ namespace FinanceTracker
             int nHeightEllipse
         );
         
+        
 
         public Form2()
         {
@@ -37,16 +40,34 @@ namespace FinanceTracker
             panel2.Height = BtnDashboard.Height;
             panel2.Top = BtnDashboard.Top;
             panel2.Left = BtnDashboard.Left;
-            BtnDashboard.BackColor = Color.FromArgb(128, 255, 255);
+
 
             usrname.Text = Properties.Settings.Default.UserName;
 
             lbTitle.Text = "DashBoard";
+
+            Dashboard.BringToFront();
+
+            /*
             this.PnlFormLoader.Controls.Clear();
             toDashboard FrmDashboard_Vrb = new toDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
             FrmDashboard_Vrb.Show();
+            */
+
+
+        }
+
+        //Stop the flickering when switching between panels
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -70,56 +91,66 @@ namespace FinanceTracker
             panel2.Height = BtnDashboard.Height;
             panel2.Top = BtnDashboard.Top;
             panel2.Left = BtnDashboard.Left;
-            BtnDashboard.BackColor = Color.FromArgb(128, 255, 255);
+
 
             lbTitle.Text = "DashBoard";
-            this.PnlFormLoader.Controls.Clear();
+            Dashboard.BringToFront();
+            //this.PnlFormLoader.Controls.Clear();
+             /*
             toDashboard FrmDashboard_Vrb = new toDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
             FrmDashboard_Vrb.Show();
+             */
         }
         private void BtnMonth_Click(object sender, EventArgs e)
         {
             panel2.Height = BtnMonth.Height;
             panel2.Top = BtnMonth.Top;
             panel2.Left = BtnMonth.Left;
-            BtnMonth.BackColor = Color.FromArgb(128, 255, 255);
 
             lbTitle.Text = "Monthly Spending";
+            MnthlySpending.BringToFront();
+            /*
             this.PnlFormLoader.Controls.Clear();
-            toMoSpending FrmDashboard_Vrb = new toMoSpending() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();
+
+            toMoSpending FrmMonth_Vrb = new toMoSpending() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmMonth_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmMonth_Vrb);
+            FrmMonth_Vrb.Show();
+            */
         }
         private void BtnSavings_Click(object sender, EventArgs e)
         {
            panel2.Height = BtnSavings.Height;
             panel2.Top = BtnSavings.Top;
             panel2.Left = BtnSavings.Left;
-            BtnSavings.BackColor = Color.FromArgb(128, 255, 255);
+
 
             lbTitle.Text = "Savings";
+            /*
             this.PnlFormLoader.Controls.Clear();
-            toSavings FrmDashboard_Vrb = new toSavings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();
+            toSavings FrmSavings_Vrb = new toSavings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmSavings_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmSavings_Vrb);
+            FrmSavings_Vrb.Show();
+            */
         }
         private void BtnBreakdown_Click(object sender, EventArgs e)
         {
             panel2.Height = BtnBreakdown.Height;
             panel2.Top = BtnBreakdown.Top;
             panel2.Left = BtnBreakdown.Left;
-            BtnBreakdown.BackColor = Color.FromArgb(128, 255, 255);
+
 
             lbTitle.Text = "Visual Breakdown";
+            /*
             this.PnlFormLoader.Controls.Clear();
-            toBreakdown FrmDashboard_Vrb = new toBreakdown() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();
+            toBreakdown FrmBreakdown_Vrb = new toBreakdown() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmBreakdown_Vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmBreakdown_Vrb);
+            FrmBreakdown_Vrb.Show();
+            */
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -134,22 +165,22 @@ namespace FinanceTracker
 
         private void BtnDashboard_Leave(object sender, EventArgs e)
         {
-            BtnDashboard.BackColor = Color.FromArgb(128, 255, 255);
+
         }
 
         private void BtnMonth_Leave(object sender, EventArgs e)
         {
-            BtnMonth.BackColor = Color.FromArgb(128, 255, 255);
+
         }
 
         private void BtnSavings_Leave(object sender, EventArgs e)
         {
-            BtnSavings.BackColor = Color.FromArgb(128, 255, 255);
+
         }
 
         private void BtnBreakdown_Leave(object sender, EventArgs e)
         {
-            BtnBreakdown.BackColor = Color.FromArgb(128, 255, 255);
+
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -157,7 +188,7 @@ namespace FinanceTracker
             panel2.Height = Settings.Height;
             panel2.Top = Settings.Top;
             panel2.Left = Settings.Left;
-            Settings.BackColor = Color.FromArgb(128, 255, 255); 
+
         }
 
         private void label3_Click(object sender, EventArgs e)

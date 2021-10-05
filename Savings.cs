@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace FinanceTracker
 {
-    public partial class toBreakdown : Form
+    public partial class Savings : UserControl
     {
-        public toBreakdown()
+        public Savings()
         {
             InitializeComponent();
         }

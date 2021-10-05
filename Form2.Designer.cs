@@ -42,15 +42,18 @@ namespace FinanceTracker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
+            this.MnthlySpending = new FinanceTracker.MthlySpending();
+            this.Dashboard = new FinanceTracker.Dashboard();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PnlFormLoader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel1.Controls.Add(this.Settings);
             this.panel1.Controls.Add(this.BtnBreakdown);
             this.panel1.Controls.Add(this.BtnSavings);
@@ -83,6 +86,7 @@ namespace FinanceTracker
             // 
             // BtnBreakdown
             // 
+            this.BtnBreakdown.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnBreakdown.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnBreakdown.FlatAppearance.BorderSize = 0;
             this.BtnBreakdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -96,12 +100,13 @@ namespace FinanceTracker
             this.BtnBreakdown.TabIndex = 1;
             this.BtnBreakdown.Text = "Visual Breakdown";
             this.BtnBreakdown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnBreakdown.UseVisualStyleBackColor = true;
+            this.BtnBreakdown.UseVisualStyleBackColor = false;
             this.BtnBreakdown.Click += new System.EventHandler(this.BtnBreakdown_Click);
             this.BtnBreakdown.Leave += new System.EventHandler(this.BtnBreakdown_Leave);
             // 
             // BtnSavings
             // 
+            this.BtnSavings.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnSavings.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnSavings.FlatAppearance.BorderSize = 0;
             this.BtnSavings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,12 +120,13 @@ namespace FinanceTracker
             this.BtnSavings.TabIndex = 1;
             this.BtnSavings.Text = "Savings";
             this.BtnSavings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnSavings.UseVisualStyleBackColor = true;
+            this.BtnSavings.UseVisualStyleBackColor = false;
             this.BtnSavings.Click += new System.EventHandler(this.BtnSavings_Click);
             this.BtnSavings.Leave += new System.EventHandler(this.BtnSavings_Leave);
             // 
             // BtnMonth
             // 
+            this.BtnMonth.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnMonth.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnMonth.FlatAppearance.BorderSize = 0;
             this.BtnMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -134,12 +140,13 @@ namespace FinanceTracker
             this.BtnMonth.TabIndex = 1;
             this.BtnMonth.Text = "Monthly Spending";
             this.BtnMonth.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnMonth.UseVisualStyleBackColor = true;
+            this.BtnMonth.UseVisualStyleBackColor = false;
             this.BtnMonth.Click += new System.EventHandler(this.BtnMonth_Click);
             this.BtnMonth.Leave += new System.EventHandler(this.BtnMonth_Leave);
             // 
             // BtnDashboard
             // 
+            this.BtnDashboard.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnDashboard.FlatAppearance.BorderSize = 0;
             this.BtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,13 +160,14 @@ namespace FinanceTracker
             this.BtnDashboard.TabIndex = 1;
             this.BtnDashboard.Text = "Dashboard";
             this.BtnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnDashboard.UseVisualStyleBackColor = true;
+            this.BtnDashboard.UseVisualStyleBackColor = false;
             this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             this.BtnDashboard.Leave += new System.EventHandler(this.BtnDashboard_Leave);
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Controls.Add(this.sad);
             this.panel2.Controls.Add(this.usrname);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -218,11 +226,29 @@ namespace FinanceTracker
             // 
             // PnlFormLoader
             // 
+            this.PnlFormLoader.Controls.Add(this.MnthlySpending);
+            this.PnlFormLoader.Controls.Add(this.Dashboard);
             this.PnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlFormLoader.Location = new System.Drawing.Point(167, 79);
             this.PnlFormLoader.Name = "PnlFormLoader";
             this.PnlFormLoader.Size = new System.Drawing.Size(784, 498);
             this.PnlFormLoader.TabIndex = 3;
+            // 
+            // MnthlySpending
+            // 
+            this.MnthlySpending.BackColor = System.Drawing.Color.MidnightBlue;
+            this.MnthlySpending.Location = new System.Drawing.Point(0, 0);
+            this.MnthlySpending.Name = "MnthlySpending";
+            this.MnthlySpending.Size = new System.Drawing.Size(784, 498);
+            this.MnthlySpending.TabIndex = 5;
+            // 
+            // Dashboard
+            // 
+            this.Dashboard.BackColor = System.Drawing.Color.AliceBlue;
+            this.Dashboard.Location = new System.Drawing.Point(0, 0);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(784, 498);
+            this.Dashboard.TabIndex = 0;
             // 
             // button1
             // 
@@ -238,7 +264,7 @@ namespace FinanceTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PnlFormLoader);
@@ -257,6 +283,7 @@ namespace FinanceTracker
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PnlFormLoader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +304,8 @@ namespace FinanceTracker
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Panel PnlFormLoader;
         private System.Windows.Forms.Button button1;
+        private Dashboard Dashboard;
+        private MthlySpending MnthlySpending;
     }
 }
 

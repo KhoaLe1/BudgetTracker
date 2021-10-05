@@ -40,6 +40,7 @@ namespace FinanceTracker
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.showPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -135,10 +136,9 @@ namespace FinanceTracker
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtUsername.Location = new System.Drawing.Point(48, 214);
-            this.txtUsername.Multiline = true;
+            this.txtUsername.Location = new System.Drawing.Point(44, 226);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(236, 24);
+            this.txtUsername.Size = new System.Drawing.Size(240, 17);
             this.txtUsername.TabIndex = 9;
             // 
             // txtPassword
@@ -146,11 +146,11 @@ namespace FinanceTracker
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.txtPassword.Location = new System.Drawing.Point(48, 271);
-            this.txtPassword.Multiline = true;
+            this.txtPassword.Location = new System.Drawing.Point(44, 283);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(236, 24);
+            this.txtPassword.Size = new System.Drawing.Size(240, 17);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // checkBox1
             // 
@@ -163,12 +163,24 @@ namespace FinanceTracker
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // showPass
+            // 
+            this.showPass.AutoSize = true;
+            this.showPass.Location = new System.Drawing.Point(176, 309);
+            this.showPass.Name = "showPass";
+            this.showPass.Size = new System.Drawing.Size(108, 19);
+            this.showPass.TabIndex = 12;
+            this.showPass.Text = "Show Password";
+            this.showPass.UseVisualStyleBackColor = true;
+            this.showPass.CheckedChanged += new System.EventHandler(this.showPass_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(292, 447);
+            this.Controls.Add(this.showPass);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -184,6 +196,9 @@ namespace FinanceTracker
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -205,5 +220,6 @@ namespace FinanceTracker
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox showPass;
     }
 }

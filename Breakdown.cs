@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace FinanceTracker
 {
-    public partial class toSavings : Form
+    public partial class Breakdown : UserControl
     {
-        public toSavings()
+        public Breakdown()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
