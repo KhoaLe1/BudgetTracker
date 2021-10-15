@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
-namespace FinanceTracker
+namespace BudgetTracker
 {
     public partial class Dashboard : UserControl
     {
@@ -23,12 +23,12 @@ namespace FinanceTracker
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void Label1_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
             double Balance = double.Parse(textBox2.Text);
             double Income = double.Parse(textBox3.Text);
@@ -49,45 +49,45 @@ namespace FinanceTracker
             pcent.Text = percentage.ToString();
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        private void TextBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        private void TextBox3_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar))
             { e.Handled = true; }
         }
 
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsNumber(e.KeyChar))
             { e.Handled = true; }
         }
 
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar))
             { e.Handled = true; }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void Label9_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void vBar1_Click(object sender, EventArgs e)
+        private void VBar1_Click(object sender, EventArgs e)
         {
 
         }

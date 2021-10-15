@@ -1,5 +1,5 @@
 ﻿
-namespace FinanceTracker
+namespace BudgetTracker
 {
     partial class MthlySpending
     {
@@ -35,7 +35,7 @@ namespace FinanceTracker
             this.pcent = new System.Windows.Forms.Label();
             this.expectF = new System.Windows.Forms.Label();
             this.aFunds = new System.Windows.Forms.Label();
-            this.vBar1 = new FinanceTracker.vBar();
+            this.vBar1 = new BudgetTracker.VBar();
             this.newMnth = new System.Windows.Forms.Button();
             this.eDnP = new System.Windows.Forms.Button();
             this.txtCost = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@ namespace FinanceTracker
             this.btnUpdate.TabIndex = 35;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -68,7 +68,7 @@ namespace FinanceTracker
             this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnEnter
             // 
@@ -79,7 +79,7 @@ namespace FinanceTracker
             this.btnEnter.TabIndex = 33;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // pcent
             // 
@@ -88,7 +88,7 @@ namespace FinanceTracker
             this.pcent.Size = new System.Drawing.Size(50, 23);
             this.pcent.TabIndex = 32;
             this.pcent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.pcent.Click += new System.EventHandler(this.pcent_Click);
+            this.pcent.Click += new System.EventHandler(this.Pcent_Click);
             // 
             // expectF
             // 
@@ -117,7 +117,7 @@ namespace FinanceTracker
             this.vBar1.Name = "vBar1";
             this.vBar1.Size = new System.Drawing.Size(50, 289);
             this.vBar1.TabIndex = 29;
-            this.vBar1.Click += new System.EventHandler(this.vBar1_Click);
+            this.vBar1.Click += new System.EventHandler(this.VBar1_Click);
             // 
             // newMnth
             // 
@@ -127,7 +127,7 @@ namespace FinanceTracker
             this.newMnth.TabIndex = 28;
             this.newMnth.Text = "New Month";
             this.newMnth.UseVisualStyleBackColor = true;
-            this.newMnth.Click += new System.EventHandler(this.clear_Click);
+            this.newMnth.Click += new System.EventHandler(this.Clear_Click);
             // 
             // eDnP
             // 
@@ -137,7 +137,7 @@ namespace FinanceTracker
             this.eDnP.TabIndex = 27;
             this.eDnP.Text = "Add";
             this.eDnP.UseVisualStyleBackColor = true;
-            this.eDnP.Click += new System.EventHandler(this.eDnP_Click);
+            this.eDnP.Click += new System.EventHandler(this.EDnP_Click);
             // 
             // txtCost
             // 
@@ -146,7 +146,7 @@ namespace FinanceTracker
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(119, 23);
             this.txtCost.TabIndex = 26;
-            this.txtCost.TextChanged += new System.EventHandler(this.txtCost_TextChanged);
+            this.txtCost.TextChanged += new System.EventHandler(this.TxtCost_TextChanged);
             // 
             // ePrice
             // 
@@ -184,8 +184,8 @@ namespace FinanceTracker
             this.txtIn.Name = "txtIn";
             this.txtIn.Size = new System.Drawing.Size(119, 23);
             this.txtIn.TabIndex = 22;
-            this.txtIn.TextChanged += new System.EventHandler(this.txtIn_TextChanged);
-            this.txtIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIn_KeyPress);
+            this.txtIn.TextChanged += new System.EventHandler(this.TxtIn_TextChanged);
+            this.txtIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIn_KeyPress);
             // 
             // exIncome
             // 
@@ -212,8 +212,8 @@ namespace FinanceTracker
             this.lv_spendings.TabIndex = 20;
             this.lv_spendings.UseCompatibleStateImageBehavior = false;
             this.lv_spendings.View = System.Windows.Forms.View.Details;
-            this.lv_spendings.SelectedIndexChanged += new System.EventHandler(this.lv_spendings_SelectedIndexChanged);
-            this.lv_spendings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lv_spendings_MouseClick);
+            this.lv_spendings.SelectedIndexChanged += new System.EventHandler(this.Lv_spendings_SelectedIndexChanged);
+            this.lv_spendings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Lv_spendings_MouseClick);
             // 
             // ch_description
             // 
@@ -267,7 +267,7 @@ namespace FinanceTracker
         private System.Windows.Forms.Label pcent;
         private System.Windows.Forms.Label expectF;
         private System.Windows.Forms.Label aFunds;
-        private vBar vBar1;
+        private VBar vBar1;
         private System.Windows.Forms.Button newMnth;
         private System.Windows.Forms.Button eDnP;
         private System.Windows.Forms.TextBox txtCost;

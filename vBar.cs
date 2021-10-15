@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-namespace FinanceTracker
+namespace BudgetTracker
 {
-    class vBar : ProgressBar
+    class VBar : ProgressBar
     {
         protected override CreateParams CreateParams
         {

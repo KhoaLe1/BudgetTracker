@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FinanceTracker
+namespace BudgetTracker
 {
     public partial class Form1 : Form
     {
@@ -26,12 +26,12 @@ namespace FinanceTracker
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == "khoale177" && txtPassword.Text == "nup6rtqb")
             {
@@ -60,17 +60,17 @@ namespace FinanceTracker
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void showPass_CheckedChanged(object sender, EventArgs e)
+        private void ShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (showPass.Checked == true) {txtPassword.UseSystemPasswordChar = false;}
             else { txtPassword.UseSystemPasswordChar = true;}

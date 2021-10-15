@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FinanceTracker
+namespace BudgetTracker
 {
     class GlobalVariables
     {
@@ -16,62 +16,62 @@ namespace FinanceTracker
             get { return v_Budget; }
             set { v_Budget = value; }
         }
-        public static string updated
+        public static string Updated
         {
             get { return v_updated; }
             set { v_updated = value; }
         }
-        public static string setBudget
+        public static string SetBudget
         {
             get { return v_setBudget; }
             set { v_setBudget = value; }
         }
-        public static double dbudget
+        public static double Dbudget
         {
             get { return v_dbudget; }
             set { v_dbudget = value; }
         }
-        public static double budNum
+        public static double BudNum
         {
             get { return v_budNum; }
             set { v_budNum = value; }
         }
-        public static double percentage
+        public static double Percentage
         {
             get { return v_percentage; }
             set { v_percentage = value; }
         }
-        public static double spent
+        public static double Spent
         {
             get { return v_spent; }
             set { v_spent = value; }
         }
-        public static double addBack
+        public static double AddBack
         {
             get { return v_addBack; }
             set { v_addBack = value; }
         }
-        public static double numOnly
+        public static double NumOnly
         {
             get { return v_numOnly; }
             set { v_numOnly = value; }
         }
-        public static int iPercent
+        public static int In_Percent
         {
             get { return v_iPercent; }
             set { v_iPercent = value; }
         }
-        public static bool update
+        public static bool Update
         {
             get { return v_update; }
             set { v_update = value; }
         }
-        public static bool isempty
+        public static bool Isempty
         {
             get { return v_isempty; }
             set { v_isempty = value; }
         }
-        public static bool isNum
+        public static bool IsNum
         {
             get { return v_isNum; }
             set { v_isNum = value; }

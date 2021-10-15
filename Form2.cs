@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 
-namespace FinanceTracker
+namespace BudgetTracker
 {
     
 
@@ -70,17 +70,17 @@ namespace FinanceTracker
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
 
@@ -153,12 +153,12 @@ namespace FinanceTracker
             */
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -191,37 +191,37 @@ namespace FinanceTracker
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void Label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void Label6_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void vBar1_Click(object sender, EventArgs e)
+        private void BBar1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
         }
@@ -238,7 +238,7 @@ namespace FinanceTracker
             mouseDown = true; 
         }
 
-        private void mouseMove_event(object sender, MouseEventArgs e)
+        private void MouseMove_event(object sender, MouseEventArgs e)
         {
             if(mouseDown == true)
             {
@@ -248,7 +248,7 @@ namespace FinanceTracker
             }
         }
 
-        private void mouseUp_even(object sender, MouseEventArgs e)
+        private void MouseUp_even(object sender, MouseEventArgs e)
         {
             mouseDown = false; 
         }

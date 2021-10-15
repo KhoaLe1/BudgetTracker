@@ -1,5 +1,5 @@
 ﻿
-namespace FinanceTracker
+namespace BudgetTracker
 {
     partial class Dashboard
     {
@@ -41,7 +41,7 @@ namespace FinanceTracker
             this.label1 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.MoneyGoal = new System.Windows.Forms.Label();
-            this.vBar1 = new FinanceTracker.vBar();
+            this.vBar1 = new BudgetTracker.VBar();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@ namespace FinanceTracker
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 39);
             this.label9.TabIndex = 46;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.Click += new System.EventHandler(this.Label9_Click);
             // 
             // label8
             // 
@@ -117,7 +117,7 @@ namespace FinanceTracker
             this.button1.TabIndex = 43;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // label2
             // 
@@ -130,7 +130,7 @@ namespace FinanceTracker
             this.label2.TabIndex = 42;
             this.label2.Text = "0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
@@ -143,7 +143,7 @@ namespace FinanceTracker
             this.label1.TabIndex = 41;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // textBox4
             // 
@@ -151,7 +151,7 @@ namespace FinanceTracker
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 40;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox4_KeyPress);
             // 
             // MoneyGoal
             // 
@@ -171,7 +171,7 @@ namespace FinanceTracker
             this.vBar1.Name = "vBar1";
             this.vBar1.Size = new System.Drawing.Size(55, 190);
             this.vBar1.TabIndex = 38;
-            this.vBar1.Click += new System.EventHandler(this.vBar1_Click);
+            this.vBar1.Click += new System.EventHandler(this.VBar1_Click);
             // 
             // label6
             // 
@@ -192,8 +192,8 @@ namespace FinanceTracker
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(130, 23);
             this.textBox3.TabIndex = 36;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.textBox3.TextChanged += new System.EventHandler(this.TextBox3_TextChanged_1);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox3_KeyPress);
             // 
             // label5
             // 
@@ -214,8 +214,8 @@ namespace FinanceTracker
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(130, 23);
             this.textBox2.TabIndex = 34;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged_1);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox2_KeyPress);
             // 
             // label4
             // 
@@ -287,7 +287,7 @@ namespace FinanceTracker
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label MoneyGoal;
-        private vBar vBar1;
+        private VBar vBar1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;

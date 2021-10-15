@@ -1,6 +1,6 @@
 ﻿
-namespace FinanceTracker
-{
+namespace BudgetTracker 
+{ 
     partial class Form2
     {
         /// <summary>
@@ -42,8 +42,8 @@ namespace FinanceTracker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
-            this.MnthlySpending = new FinanceTracker.MthlySpending();
-            this.Dashboard = new FinanceTracker.Dashboard();
+            this.MnthlySpending = new BudgetTracker.MthlySpending();
+            this.Dashboard = new BudgetTracker.Dashboard();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,7 +65,7 @@ namespace FinanceTracker
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 577);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // Settings
             // 
@@ -92,7 +92,7 @@ namespace FinanceTracker
             this.BtnBreakdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBreakdown.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnBreakdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnBreakdown.Image = global::FinanceTracker.Properties.Resources.icons8_pie_chart_30;
+            //this.BtnBreakdown.Image = global::FinanceTracker.Properties.Resources.icons8_pie_chart_30;
             this.BtnBreakdown.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBreakdown.Location = new System.Drawing.Point(0, 307);
             this.BtnBreakdown.Name = "BtnBreakdown";
@@ -112,7 +112,7 @@ namespace FinanceTracker
             this.BtnSavings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSavings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSavings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnSavings.Image = global::FinanceTracker.Properties.Resources.icons8_bank_safe_24;
+            //this.BtnSavings.Image = global::FinanceTracker.Properties.Resources.icons8_bank_safe_24;
             this.BtnSavings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnSavings.Location = new System.Drawing.Point(0, 239);
             this.BtnSavings.Name = "BtnSavings";
@@ -132,7 +132,7 @@ namespace FinanceTracker
             this.BtnMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMonth.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnMonth.Image = global::FinanceTracker.Properties.Resources.icons8_calendar_24;
+            //this.BtnMonth.Image = global::FinanceTracker.Properties.Resources.icons8_calendar_24;
             this.BtnMonth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnMonth.Location = new System.Drawing.Point(0, 171);
             this.BtnMonth.Name = "BtnMonth";
@@ -152,7 +152,7 @@ namespace FinanceTracker
             this.BtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDashboard.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.BtnDashboard.Image = global::FinanceTracker.Properties.Resources.icons8_home_24;
+            //this.BtnDashboard.Image = global::FinanceTracker.Properties.Resources.icons8_home_24;
             this.BtnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnDashboard.Location = new System.Drawing.Point(0, 103);
             this.BtnDashboard.Name = "BtnDashboard";
@@ -176,7 +176,7 @@ namespace FinanceTracker
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(167, 103);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
             // sad
             // 
@@ -187,7 +187,7 @@ namespace FinanceTracker
             this.sad.Size = new System.Drawing.Size(94, 15);
             this.sad.TabIndex = 2;
             this.sad.Text = "Last Signed In:";
-            this.sad.Click += new System.EventHandler(this.label2_Click);
+            this.sad.Click += new System.EventHandler(this.Label2_Click);
             // 
             // usrname
             // 
@@ -200,18 +200,18 @@ namespace FinanceTracker
             this.usrname.TabIndex = 1;
             this.usrname.Text = "User Name";
             this.usrname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usrname.Click += new System.EventHandler(this.label1_Click);
+            this.usrname.Click += new System.EventHandler(this.Label1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FinanceTracker.Properties.Resources.EMqvr1SWkAYMa1M;
+            //this.pictureBox1.Image = global::FinanceTracker.Properties.Resources.EMqvr1SWkAYMa1M;
             this.pictureBox1.Location = new System.Drawing.Point(52, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // lbTitle
             // 
@@ -258,7 +258,7 @@ namespace FinanceTracker
             this.button1.Size = new System.Drawing.Size(32, 34);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form2
             // 
@@ -276,8 +276,8 @@ namespace FinanceTracker
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove_event);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp_even);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_event);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_even);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

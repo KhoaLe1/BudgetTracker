@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FinanceTracker
+namespace BudgetTracker
 {
     public partial class MthlySpending : UserControl
     {
@@ -18,26 +18,26 @@ namespace FinanceTracker
 
 
         //-------Not Used----------//
-        private void pcent_Click(object sender, EventArgs e)
+        private void Pcent_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtIn_TextChanged(object sender, EventArgs e)
+        private void TxtIn_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private void txtCost_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vBar1_Click(object sender, EventArgs e)
+        private void TxtCost_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lv_spendings_SelectedIndexChanged(object sender, EventArgs e)
+        private void VBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lv_spendings_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -46,20 +46,20 @@ namespace FinanceTracker
 
 
 
-        private void clear_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Warning: This will clear all inputed data. Do you want to continue?", "CLEAR", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 lv_spendings.Items.Clear();
-                GlobalVariables.updated = "0";
+                GlobalVariables.Updated = "0";
                 GlobalVariables.Budget = "0";
-                GlobalVariables.iPercent = 0;
-                GlobalVariables.update = false;
+                GlobalVariables.In_Percent = 0;
+                GlobalVariables.Update = false;
                 btnEnter.PerformClick();
             }
         }
 
-        private void txtIn_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtIn_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (char.IsLetter(e.KeyChar));
             if (e.Handled == true)
@@ -69,9 +69,9 @@ namespace FinanceTracker
         }
 
        
-        private void btnEnter_Click(object sender, EventArgs e)
+        private void BtnEnter_Click(object sender, EventArgs e)
         {
-            if (GlobalVariables.update == false)
+            if (GlobalVariables.Update == false)
             {
                 txtName.Enabled = true;
                 txtCost.Enabled = true;
@@ -81,52 +81,52 @@ namespace FinanceTracker
             if (txtIn.Text != "") { GlobalVariables.Budget = txtIn.Text; }
             txtIn.Text = "";
 
-            if (GlobalVariables.update == false || GlobalVariables.isempty == true)
+            if (GlobalVariables.Update == false || GlobalVariables.Isempty == true)
             {
-                GlobalVariables.dbudget = double.Parse(GlobalVariables.Budget); // text to double type
+                GlobalVariables.Dbudget = double.Parse(GlobalVariables.Budget); // text to double type
                 expectF.Text = "$" + GlobalVariables.Budget;
-                GlobalVariables.budNum = double.Parse(GlobalVariables.Budget);
+                GlobalVariables.BudNum = double.Parse(GlobalVariables.Budget);
             }
-            else if ((GlobalVariables.update == true && txtIn.Text != "") && GlobalVariables.isempty == false)
+            else if ((GlobalVariables.Update == true && txtIn.Text != "") && GlobalVariables.Isempty == false)
             {
-                expectF.Text = "$" + GlobalVariables.updated;
+                expectF.Text = "$" + GlobalVariables.Updated;
             }
 
-            GlobalVariables.percentage = Math.Truncate((GlobalVariables.dbudget / GlobalVariables.budNum) * 100);
+            GlobalVariables.Percentage = Math.Truncate((GlobalVariables.Dbudget / GlobalVariables.BudNum) * 100);
 
-            if (GlobalVariables.dbudget != 0) { GlobalVariables.iPercent = Convert.ToInt32(GlobalVariables.percentage); }
-            else { GlobalVariables.iPercent = 0; }
+            if (GlobalVariables.Dbudget != 0) { GlobalVariables.In_Percent = Convert.ToInt32(GlobalVariables.Percentage); }
+            else { GlobalVariables.In_Percent = 0; }
 
-            vBar1.Value = GlobalVariables.iPercent;
-            pcent.Text = GlobalVariables.percentage.ToString() + "%";
+            vBar1.Value = GlobalVariables.In_Percent;
+            pcent.Text = GlobalVariables.Percentage.ToString() + "%";
         }
 
-        private void eDnP_Click(object sender, EventArgs e)
+        private void EDnP_Click(object sender, EventArgs e)
         {
             if (txtCost.Text == "") { txtCost.Text = "0"; }
-            GlobalVariables.isNum = double.TryParse(txtCost.Text, out double numOnly);
-            if (GlobalVariables.isNum == true)
+            GlobalVariables.IsNum = double.TryParse(txtCost.Text, out double NumOnly);
+            if (GlobalVariables.IsNum == true)
             {
-                GlobalVariables.spent = double.Parse(txtCost.Text);
-                GlobalVariables.dbudget = GlobalVariables.dbudget - GlobalVariables.spent;
+                GlobalVariables.Spent = double.Parse(txtCost.Text);
+                GlobalVariables.Dbudget -= GlobalVariables.Spent;
 
-                GlobalVariables.setBudget = GlobalVariables.dbudget.ToString();
+                GlobalVariables.SetBudget = GlobalVariables.Dbudget.ToString();
 
                 ListViewItem Item = new ListViewItem(txtName.Text);
 
                 Item.SubItems.Add(txtCost.Text);
-                Item.SubItems.Add(GlobalVariables.setBudget);
+                Item.SubItems.Add(GlobalVariables.SetBudget);
                 lv_spendings.Items.Add(Item);
 
                 txtName.Text = "";
                 txtCost.Text = "";
                 //budNum = double.Parse(Budget);
-                expectF.Text = "$" + GlobalVariables.dbudget;
+                expectF.Text = "$" + GlobalVariables.Dbudget;
 
-                GlobalVariables.percentage = Math.Truncate((GlobalVariables.dbudget / GlobalVariables.budNum) * 100);
-                GlobalVariables.iPercent = Convert.ToInt32(GlobalVariables.percentage);
-                vBar1.Value = GlobalVariables.iPercent;
-                pcent.Text = GlobalVariables.percentage.ToString() + "%";
+                GlobalVariables.Percentage = Math.Truncate((GlobalVariables.Dbudget / GlobalVariables.BudNum) * 100);
+                GlobalVariables.In_Percent = Convert.ToInt32(GlobalVariables.Percentage);
+                vBar1.Value = GlobalVariables.In_Percent;
+                pcent.Text = GlobalVariables.Percentage.ToString() + "%";
 
                 //vBar1.Update();
             }
@@ -137,7 +137,7 @@ namespace FinanceTracker
         }
 
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
             if (txtName.Text != "")
             {
@@ -146,38 +146,38 @@ namespace FinanceTracker
 
             if (txtCost.Text != "")
             {
-                GlobalVariables.spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
-                GlobalVariables.dbudget = GlobalVariables.dbudget + GlobalVariables.spent;
+                GlobalVariables.Spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                GlobalVariables.Dbudget += GlobalVariables.Spent;
                 // add back previous value
                 lv_spendings.SelectedItems[0].SubItems[1].Text = txtCost.Text;
 
-                GlobalVariables.spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
-                GlobalVariables.dbudget = GlobalVariables.dbudget - GlobalVariables.spent;
+                GlobalVariables.Spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                GlobalVariables.Dbudget -= GlobalVariables.Spent;
                 //subtract updated value
-                GlobalVariables.updated = GlobalVariables.dbudget.ToString();
-                lv_spendings.SelectedItems[0].SubItems[2].Text = GlobalVariables.updated;
+                GlobalVariables.Updated = GlobalVariables.Dbudget.ToString();
+                lv_spendings.SelectedItems[0].SubItems[2].Text = GlobalVariables.Updated;
 
-                GlobalVariables.update = true;
+                GlobalVariables.Update = true;
                 btnEnter.PerformClick();
 
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deleting selected item. Continue?", "DELETE", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
 
-                GlobalVariables.addBack = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
-                GlobalVariables.dbudget += GlobalVariables.addBack;
-                GlobalVariables.updated = GlobalVariables.dbudget.ToString();
+                GlobalVariables.AddBack = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
+                GlobalVariables.Dbudget += GlobalVariables.AddBack;
+                GlobalVariables.Updated = GlobalVariables.Dbudget.ToString();
 
                 lv_spendings.Items.RemoveAt(lv_spendings.SelectedIndices[0]);
-                GlobalVariables.update = true;
+                GlobalVariables.Update = true;
 
                 //string ls = lv_spendings.Items.Count.ToString();
                 //MessageBox.Show(ls,"Size",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
-                if (lv_spendings.Items.Count == 0) { GlobalVariables.isempty = true; }
+                if (lv_spendings.Items.Count == 0) { GlobalVariables.Isempty = true; }
 
                 btnEnter.PerformClick();
 
@@ -187,7 +187,7 @@ namespace FinanceTracker
             }
         }
 
-        private void lv_spendings_MouseClick(object sender, MouseEventArgs e)
+        private void Lv_spendings_MouseClick(object sender, MouseEventArgs e)
         {
             if (lv_spendings.SelectedItems.Count != 0)
             {
