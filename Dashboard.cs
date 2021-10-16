@@ -14,8 +14,8 @@ namespace BudgetTracker
         public Dashboard()
         {
             InitializeComponent();
-            this.ActiveControl = textBox2;
-            textBox2.Focus();
+            this.ActiveControl = TextBox2;
+            TextBox2.Focus();
         }
 
         private void Dashboard_Load_1(object sender, EventArgs e)
@@ -30,22 +30,21 @@ namespace BudgetTracker
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            double Balance = double.Parse(textBox2.Text);
-            double Income = double.Parse(textBox3.Text);
-            double NetWorth = Balance + Income;
-            double Goal = double.Parse(textBox4.Text);
+            double Balance = double.Parse(TextBox2.Text);
+            double NetWorth = Balance;
+            double Goal = double.Parse(TextBox4.Text);
 
 
             string MGoal = Goal.ToString();
             string Bank = Balance.ToString();
             string NW = NetWorth.ToString();
 
-            label1.Text = NW;
-            label2.Text = Bank;
+            Label1.Text = NW;
+            Label2.Text = Bank;
             MoneyGoal.Text = MGoal;
 
             int percentage = Convert.ToInt32((NetWorth / Goal) * 100);
-            vBar1.Value = percentage;
+            VBar1.Value = percentage;
             pcent.Text = percentage.ToString();
         }
 

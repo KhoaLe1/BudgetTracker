@@ -55,7 +55,7 @@ namespace BudgetTracker
                 GlobalVariables.Budget = "0";
                 GlobalVariables.In_Percent = 0;
                 GlobalVariables.Update = false;
-                btnEnter.PerformClick();
+                BtnEnter.PerformClick();
             }
         }
 
@@ -73,23 +73,23 @@ namespace BudgetTracker
         {
             if (GlobalVariables.Update == false)
             {
-                txtName.Enabled = true;
-                txtCost.Enabled = true;
+                TxtName.Enabled = true;
+                TxtCost.Enabled = true;
             }
 
 
-            if (txtIn.Text != "") { GlobalVariables.Budget = txtIn.Text; }
-            txtIn.Text = "";
+            if (TxtIn.Text != "") { GlobalVariables.Budget = TxtIn.Text; }
+            TxtIn.Text = "";
 
             if (GlobalVariables.Update == false || GlobalVariables.Isempty == true)
             {
                 GlobalVariables.Dbudget = double.Parse(GlobalVariables.Budget); // text to double type
-                expectF.Text = "$" + GlobalVariables.Budget;
+                ExpectF.Text = "$" + GlobalVariables.Budget;
                 GlobalVariables.BudNum = double.Parse(GlobalVariables.Budget);
             }
-            else if ((GlobalVariables.Update == true && txtIn.Text != "") && GlobalVariables.Isempty == false)
+            else if ((GlobalVariables.Update == true && TxtIn.Text != "") && GlobalVariables.Isempty == false)
             {
-                expectF.Text = "$" + GlobalVariables.Updated;
+                ExpectF.Text = "$" + GlobalVariables.Updated;
             }
 
             GlobalVariables.Percentage = Math.Truncate((GlobalVariables.Dbudget / GlobalVariables.BudNum) * 100);
@@ -97,36 +97,36 @@ namespace BudgetTracker
             if (GlobalVariables.Dbudget != 0) { GlobalVariables.In_Percent = Convert.ToInt32(GlobalVariables.Percentage); }
             else { GlobalVariables.In_Percent = 0; }
 
-            vBar1.Value = GlobalVariables.In_Percent;
-            pcent.Text = GlobalVariables.Percentage.ToString() + "%";
+            VBar1.Value = GlobalVariables.In_Percent;
+            Pcent.Text = GlobalVariables.Percentage.ToString() + "%";
         }
 
         private void EDnP_Click(object sender, EventArgs e)
         {
-            if (txtCost.Text == "") { txtCost.Text = "0"; }
-            GlobalVariables.IsNum = double.TryParse(txtCost.Text, out double NumOnly);
+            if (TxtCost.Text == "") { TxtCost.Text = "0"; }
+            GlobalVariables.IsNum = double.TryParse(TxtCost.Text, out double NumOnly);
             if (GlobalVariables.IsNum == true)
             {
-                GlobalVariables.Spent = double.Parse(txtCost.Text);
+                GlobalVariables.Spent = double.Parse(TxtCost.Text);
                 GlobalVariables.Dbudget -= GlobalVariables.Spent;
 
                 GlobalVariables.SetBudget = GlobalVariables.Dbudget.ToString();
 
-                ListViewItem Item = new ListViewItem(txtName.Text);
+                ListViewItem Item = new ListViewItem(TxtName.Text);
 
-                Item.SubItems.Add(txtCost.Text);
+                Item.SubItems.Add(TxtCost.Text);
                 Item.SubItems.Add(GlobalVariables.SetBudget);
                 lv_spendings.Items.Add(Item);
 
-                txtName.Text = "";
-                txtCost.Text = "";
+                TxtName.Text = "";
+                TxtCost.Text = "";
                 //budNum = double.Parse(Budget);
-                expectF.Text = "$" + GlobalVariables.Dbudget;
+                ExpectF.Text = "$" + GlobalVariables.Dbudget;
 
                 GlobalVariables.Percentage = Math.Truncate((GlobalVariables.Dbudget / GlobalVariables.BudNum) * 100);
                 GlobalVariables.In_Percent = Convert.ToInt32(GlobalVariables.Percentage);
-                vBar1.Value = GlobalVariables.In_Percent;
-                pcent.Text = GlobalVariables.Percentage.ToString() + "%";
+                VBar1.Value = GlobalVariables.In_Percent;
+                Pcent.Text = GlobalVariables.Percentage.ToString() + "%";
 
                 //vBar1.Update();
             }
@@ -139,17 +139,17 @@ namespace BudgetTracker
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "")
+            if (TxtName.Text != "")
             {
-                lv_spendings.SelectedItems[0].SubItems[0].Text = txtName.Text;
+                lv_spendings.SelectedItems[0].SubItems[0].Text = TxtName.Text;
             }
 
-            if (txtCost.Text != "")
+            if (TxtCost.Text != "")
             {
                 GlobalVariables.Spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
                 GlobalVariables.Dbudget += GlobalVariables.Spent;
                 // add back previous value
-                lv_spendings.SelectedItems[0].SubItems[1].Text = txtCost.Text;
+                lv_spendings.SelectedItems[0].SubItems[1].Text = TxtCost.Text;
 
                 GlobalVariables.Spent = double.Parse(lv_spendings.SelectedItems[0].SubItems[1].Text);
                 GlobalVariables.Dbudget -= GlobalVariables.Spent;
@@ -158,7 +158,7 @@ namespace BudgetTracker
                 lv_spendings.SelectedItems[0].SubItems[2].Text = GlobalVariables.Updated;
 
                 GlobalVariables.Update = true;
-                btnEnter.PerformClick();
+                BtnEnter.PerformClick();
 
             }
         }
@@ -179,10 +179,10 @@ namespace BudgetTracker
                 //MessageBox.Show(ls,"Size",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
                 if (lv_spendings.Items.Count == 0) { GlobalVariables.Isempty = true; }
 
-                btnEnter.PerformClick();
+                BtnEnter.PerformClick();
 
-                txtName.Text = "";
-                txtCost.Text = "";
+                TxtName.Text = "";
+                TxtCost.Text = "";
 
             }
         }
@@ -191,8 +191,8 @@ namespace BudgetTracker
         {
             if (lv_spendings.SelectedItems.Count != 0)
             {
-                txtName.Text = lv_spendings.SelectedItems[0].SubItems[0].Text;
-                txtCost.Text = lv_spendings.SelectedItems[0].SubItems[1].Text;
+                TxtName.Text = lv_spendings.SelectedItems[0].SubItems[0].Text;
+                TxtCost.Text = lv_spendings.SelectedItems[0].SubItems[1].Text;
             }
         }
     }

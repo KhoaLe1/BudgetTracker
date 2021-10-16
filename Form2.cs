@@ -95,13 +95,7 @@ namespace BudgetTracker
 
             lbTitle.Text = "DashBoard";
             Dashboard.BringToFront();
-            //this.PnlFormLoader.Controls.Clear();
-             /*
-            toDashboard FrmDashboard_Vrb = new toDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmDashboard_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();
-             */
+
         }
         private void BtnMonth_Click(object sender, EventArgs e)
         {
@@ -111,14 +105,7 @@ namespace BudgetTracker
 
             lbTitle.Text = "Monthly Spending";
             MnthlySpending.BringToFront();
-            /*
-            this.PnlFormLoader.Controls.Clear();
 
-            toMoSpending FrmMonth_Vrb = new toMoSpending() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmMonth_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmMonth_Vrb);
-            FrmMonth_Vrb.Show();
-            */
         }
         private void BtnSavings_Click(object sender, EventArgs e)
         {
@@ -128,13 +115,7 @@ namespace BudgetTracker
 
 
             lbTitle.Text = "Savings";
-            /*
-            this.PnlFormLoader.Controls.Clear();
-            toSavings FrmSavings_Vrb = new toSavings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmSavings_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmSavings_Vrb);
-            FrmSavings_Vrb.Show();
-            */
+
         }
         private void BtnBreakdown_Click(object sender, EventArgs e)
         {
@@ -144,13 +125,6 @@ namespace BudgetTracker
 
 
             lbTitle.Text = "Visual Breakdown";
-            /*
-            this.PnlFormLoader.Controls.Clear();
-            toBreakdown FrmBreakdown_Vrb = new toBreakdown() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmBreakdown_Vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmBreakdown_Vrb);
-            FrmBreakdown_Vrb.Show();
-            */
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)

@@ -93,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +107,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\EMqvr1SWkAYMa1M.jpg" />
+    <None Include="Resources\EMqvr1SWkAYMa1M1.jpg" />
+    <Content Include="Resources\icons8-bank-safe-24.png" />
+    <None Include="Resources\icons8-pie-chart-301.png" />
+    <None Include="Resources\icons8-bank-safe-241.png" />
+    <Content Include="Resources\icons8-calendar-24.png" />
+    <None Include="Resources\icons8-calendar-242.png" />
+    <None Include="Resources\icons8-calendar-241.png" />
+    <Content Include="Resources\icons8-calendar-48.png" />
+    <None Include="Resources\icons8-calendar-481.png" />
+    <Content Include="Resources\icons8-calendar.gif" />
+    <Content Include="Resources\icons8-home-150.png" />
+    <Content Include="Resources\icons8-home-24.png" />
+    <None Include="Resources\icons8-home-241.png" />
+    <Content Include="Resources\icons8-password-30.png" />
+    <Content Include="Resources\icons8-pie-chart-30.png" />
+    <Content Include="Resources\icons8-user-30.png" />
+    <Content Include="Resources\images.png" />
+    <Content Include="Resources\images1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
